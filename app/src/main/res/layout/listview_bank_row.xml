@@ -6,6 +6,7 @@
     android:layout_height="fill_parent"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:textSize="18sp"
+    android:textSize="20sp"
+    android:textColor="#cb6ce6"
     android:scrollbars="none">
 </TextView>

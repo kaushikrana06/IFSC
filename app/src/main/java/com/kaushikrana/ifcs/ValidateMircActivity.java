@@ -29,7 +29,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ValidateIfscActivity extends AppCompatActivity {
+public class ValidateMircActivity extends AppCompatActivity {
 
     private String URL_IFSC;
     private RequestQueue requestQueue;
@@ -39,14 +39,14 @@ public class ValidateIfscActivity extends AppCompatActivity {
     private CardView mCvBranch;
     private CardView mCvIfscDetails;
     private LinearLayout mButtons;
-    private Button bt;
+
     private TextView mBranch;
     private TextView mBank;
     private TextView mState;
     private TextView mAddress;
     private TextView mCity;
     private TextView mDistrict;
-    private String MICR;
+    private Button bt;
     private String STATE;
     private String BANK;
     private String BRANCH;
@@ -60,9 +60,8 @@ public class ValidateIfscActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_validate_ifsc);
-        bt = (Button) findViewById(R.id.button1);
-
+        setContentView(R.layout.activity_validate_mirc);
+        bt = findViewById(R.id.button2);
         db = new DatabaseHelper(this);
 
         mValidateIfsc = (Button) findViewById(R.id.btnValidate);
@@ -83,7 +82,7 @@ public class ValidateIfscActivity extends AppCompatActivity {
 
             if(ed_text.isEmpty() || ed_text.length() == 0 || ed_text.equals("") || ed_text == null)
             {
-                mIfsc.setError("Enter a Valid IFSC Code");
+                mIfsc.setError("Enter a Valid MICR Code");
             }
             else
             {
@@ -95,18 +94,18 @@ public class ValidateIfscActivity extends AppCompatActivity {
 
     public void getDetails(){
         String ifscCode = mIfsc.getText().toString().toUpperCase();
-        URL_IFSC = "https://ifsc1-database.herokuapp.com/bankinfo/" + ifscCode;
+        URL_IFSC = "https://ifsc1-database.herokuapp.com/micr/" + ifscCode;
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading Details \n\n Please wait...");
         progressDialog.show();
-        RequestQueue queue = Volley.newRequestQueue(ValidateIfscActivity.this);
+        RequestQueue queue = Volley.newRequestQueue(ValidateMircActivity.this);
 
         JsonArrayRequest objectRequest = new JsonArrayRequest(Request.Method.GET, URL_IFSC, null, response -> {
             if (response.length() == 0) {
                 progressDialog.dismiss();
-                Toast.makeText(ValidateIfscActivity.this, "Enter a valid IFSC code", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ValidateMircActivity.this, "Enter a valid MIRC code", Toast.LENGTH_SHORT).show();
             }
             else {
                 mCvIfscDetails.setVisibility(View.VISIBLE);
@@ -122,7 +121,6 @@ public class ValidateIfscActivity extends AppCompatActivity {
                         CITY = bankData.getString("CITY");
                         DISTRICT = bankData.getString("DISTRICT");
                         IFSC = bankData.getString("IFSC");
-                        MICR = bankData.getString("MICR");
                         progressDialog.dismiss();
 
 
@@ -134,7 +132,7 @@ public class ValidateIfscActivity extends AppCompatActivity {
                         mDistrict.setText(DISTRICT);
 
 
-                        if (BANK.isEmpty() || BANK.length() == 0 || BANK.equals("") || BANK == null) {
+                        if (BANK.isEmpty() || BANK.length() == 0 || BANK.equals("") || BANK == null ) {
                             progressDialog.dismiss();
 
                         } else {
@@ -142,7 +140,7 @@ public class ValidateIfscActivity extends AppCompatActivity {
                             bt.setOnClickListener(view -> {
                                 Intent myIntent = new Intent(Intent.ACTION_SEND);
                                 myIntent.setType("text/plain");
-                                String body = "Bank Name :"+" "+BANK+"\n"+"State :"+STATE+"\n"+"District :"+DISTRICT+"\n"+"City :"+CITY+"\n"+"Branch : "+BRANCH+"\n"+"Address : "+ADDRESS+"\n"+"MICR Code : "+MICR;
+                                String body = "Bank Name :"+" "+BANK+"\n"+"State :"+STATE+"\n"+"District :"+DISTRICT+"\n"+"City :"+CITY+"\n"+"Branch : "+BRANCH+"\n"+"Address : "+ADDRESS+"\n"+"IFSC Code : "+IFSC;
                                 String sub = "Your IFSC Code ";
                                 myIntent.putExtra(Intent.EXTRA_SUBJECT,sub);
                                 myIntent.putExtra(Intent.EXTRA_TEXT,body);
@@ -157,7 +155,7 @@ public class ValidateIfscActivity extends AppCompatActivity {
                 }
             }
         },
-                error -> Toast.makeText(ValidateIfscActivity.this,""+error,Toast.LENGTH_SHORT).show());
+                error -> Toast.makeText(ValidateMircActivity.this,""+error,Toast.LENGTH_SHORT).show());
         objectRequest.setRetryPolicy(new DefaultRetryPolicy(
                 10000,
                 2,

@@ -18,16 +18,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
-    private static final String DATABASE_NAME = "bankManager";
+    private static final String DATABASE_NAME = "Data_History";
 
     private static final String TABLE_IFSC = "ifsc";
 
     private static final String KEY_ID = "id";
     private static final String KEY_BANK = "bank";
     private static final String KEY_STATE = "state";
-    private static final String KEY_MICRCODE = "micr";
     private static final String KEY_BRANCH = "branch";
-    private static final String KEY_CONTACT = "contact";
     private static final String KEY_ADDRESS = "address";
     private static final String KEY_CITY = "city";
     private static final String KEY_DISTRICT = "district";
@@ -40,8 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_IFSC + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_BANK + " TEXT,"
-                + KEY_STATE + " TEXT," + KEY_MICRCODE + " TEXT,"+ KEY_BRANCH + " TEXT," + KEY_CONTACT + " TEXT," + KEY_ADDRESS + " TEXT,"+
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_BANK + " TEXT,"+
+                KEY_STATE + " TEXT," + KEY_BRANCH + " TEXT," + KEY_ADDRESS + " TEXT,"+
                 KEY_CITY + " TEXT," + KEY_DISTRICT + " TEXT," + KEY_IFSC + " TEXT" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -58,9 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_BANK, bank.get_bank());
         values.put(KEY_STATE, bank.get_state());
-        values.put(KEY_MICRCODE, bank.get_micr());
         values.put(KEY_BRANCH, bank.get_branch());
-        values.put(KEY_CONTACT, bank.get_contact());
         values.put(KEY_ADDRESS, bank.get_address());
         values.put(KEY_CITY, bank.get_city());
         values.put(KEY_DISTRICT, bank.get_district());
@@ -84,20 +80,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 bank.set_id(Integer.parseInt(cursor.getString(0)));
                 bank.set_bank(cursor.getString(1));
                 bank.set_state(cursor.getString(2));
-                bank.set_micr(cursor.getString(3));
-                bank.set_branch(cursor.getString(4));
-                bank.set_contact(cursor.getString(5));
-                bank.set_address(cursor.getString(6));
-                bank.set_city(cursor.getString(7));
-                bank.set_district(cursor.getString(8));
-                bank.set_ifsc(cursor.getString(9));
+                bank.set_branch(cursor.getString(3));
+                bank.set_address(cursor.getString(4));
+                bank.set_city(cursor.getString(5));
+                bank.set_district(cursor.getString(6));
+                bank.set_ifsc(cursor.getString(7));
 
-                // Adding contact to list
                 contactList.add(bank);
             } while (cursor.moveToNext());
         }
 
-        // return contact list
         return contactList;
     }
 }

@@ -17,39 +17,28 @@ public class NavigatorActivity extends AppCompatActivity {
 
         Button mGetIfsc = (Button) findViewById(R.id.btnGetIfsc);
         Button mValidateIfsc = (Button) findViewById(R.id.btnValidateIfsc);
-        Button mSearchByMicr = (Button) findViewById(R.id.btnMicr);
         Button mHistory = (Button) findViewById(R.id.btnSearchHistory);
+        Button mValidateMirc = (Button) findViewById(R.id.btnValidateMicr);
 
-        mGetIfsc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent findIfsc = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(findIfsc);
-            }
+
+
+        mGetIfsc.setOnClickListener(v -> {
+            Intent findIfsc = new Intent(getBaseContext(), MainActivity.class);
+            startActivity(findIfsc);
         });
 
-        mValidateIfsc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent validateIfsc = new Intent(getBaseContext(), ValidateIfscActivity.class);
-                startActivity(validateIfsc);
-            }
+        mValidateIfsc.setOnClickListener(v -> {
+            Intent validateIfsc = new Intent(getBaseContext(), ValidateIfscActivity.class);
+            startActivity(validateIfsc);
+        });
+        mValidateMirc.setOnClickListener(v -> {
+            Intent validateIfsc = new Intent(getBaseContext(), ValidateMircActivity.class);
+            startActivity(validateIfsc);
         });
 
-        mSearchByMicr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent validateMicr = new Intent(getBaseContext(), SearchMicrActivity.class);
-                startActivity(validateMicr);
-            }
-        });
-
-        mHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent history = new Intent(getBaseContext(), SearchHistoryActivity.class);
-                startActivity(history);
-            }
+        mHistory.setOnClickListener(v -> {
+            Intent history = new Intent(getBaseContext(), SearchHistoryActivity.class);
+            startActivity(history);
         });
     }
 

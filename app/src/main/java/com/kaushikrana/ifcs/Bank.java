@@ -5,9 +5,7 @@ public class Bank {
     int _id;
     String _bank;
     String _state;
-    String _micr;
     String _branch;
-    String _contact;
     String _address;
     String _city;
     String _district;
@@ -37,13 +35,6 @@ public class Bank {
         this._state = _state;
     }
 
-    public String get_micr() {
-        return _micr;
-    }
-
-    public void set_micr(String _micr) {
-        this._micr = _micr;
-    }
 
     public String get_branch() {
         return _branch;
@@ -51,14 +42,6 @@ public class Bank {
 
     public void set_branch(String _branch) {
         this._branch = _branch;
-    }
-
-    public String get_contact() {
-        return _contact;
-    }
-
-    public void set_contact(String _contact) {
-        this._contact = _contact;
     }
 
     public String get_address() {
@@ -96,25 +79,21 @@ public class Bank {
     public Bank(){
 
     }
-    public Bank(int _id, String _bank, String _state, String _micr, String _branch, String _contact, String _address, String _city, String _district, String _ifsc) {
+    public Bank(int _id, String _bank, String _state, String _branch, String _address, String _city, String _district, String _ifsc) {
         this._id = _id;
         this._bank = _bank;
         this._state = _state;
-        this._micr = _micr;
         this._branch = _branch;
-        this._contact = _contact;
         this._address = _address;
         this._city = _city;
         this._district = _district;
         this._ifsc = _ifsc;
     }
 
-    public Bank(String _bank, String _state, String _micr, String _branch, String _contact, String _address, String _city, String _district, String _ifsc) {
+    public Bank(String _bank, String _state, String _branch, String _address, String _city, String _district, String _ifsc) {
         this._bank = _bank;
         this._state = _state;
-        this._micr = _micr;
         this._branch = _branch;
-        this._contact = _contact;
         this._address = _address;
         this._city = _city;
         this._district = _district;

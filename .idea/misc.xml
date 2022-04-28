@@ -4,13 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/check.xml" value="0.1" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/clipboard.xml" value="0.1" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/et_design.xml" value="0.203" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/like.xml" value="0.1" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/placeholder.xml" value="0.1" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable-v24/share.xml" value="0.1" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/button.xml" value="0.104" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/button1.xml" value="0.163" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/button2.xml" value="0.245" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/gradiant1.xml" value="0.1" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/gradiant2.xml" value="0.1305" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/gradient3.xml" value="0.1305" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.203" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/font/fnt.xml" value="0.26927083333333335" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_navigator.xml" value="0.2390625" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_navigator.xml" value="0.264" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_search_history.xml" value="0.2390625" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_search_micr.xml" value="0.2390625" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_splash.xml" value="0.2390625" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.2390625" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_validate_ifsc.xml" value="0.2390625" />
+        <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/activity_validate_mirc.xml" value="0.2390625" />
         <entry key="..\:/Users/kaush/MyApplication/app/src/main/res/layout/listview_bank_row.xml" value="0.2390625" />
       </map>
     </option>

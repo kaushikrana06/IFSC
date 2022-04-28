@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/andika_new_basic</item>
+        <item>@font/andika_new_basic_italic</item>
+        <item>@font/archivo_narrow</item>
+        <item>@font/archivo_narrow_bold</item>
+        <item>@font/charmonman</item>
+        <item>@font/halant_medium</item>
+    </array>
+</resources>

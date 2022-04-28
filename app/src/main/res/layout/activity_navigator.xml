@@ -1,70 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_navigator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/untitled"
     tools:context="com.kaushikrana.ifcs.NavigatorActivity">
 
-    <TextView
-        android:text="All India Banks / IFSC Info"
-        android:layout_width="match_parent"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView8"
-        android:textSize="26dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"/>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:src="@drawable/check"
         android:id="@+id/imageView"
-        android:layout_marginBottom="15dp"
-        android:scaleType="fitCenter" />
+        android:layout_width="462dp"
+        android:layout_height="311dp"
+        android:layout_marginBottom="27dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bnk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:text="Get IFSC Code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/btnGetIfsc"
-        android:background="@color/colorPrimary"
+        android:layout_width="184dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="6.5dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/andika_new_basic"
+        android:text="search by branch "
         android:textColor="@color/white"
-        android:layout_marginTop="12dp"/>
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
 
     <Button
-        android:text="Validate IFSC Code?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnValidateIfsc"
-        android:background="@color/colorPrimary"
+        android:id="@+id/btnValidateMicr"
+        android:layout_width="184dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="-1dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/andika_new_basic"
+        android:text="search by Micr "
         android:textColor="@color/white"
-        android:layout_marginTop="12dp"/>
+        android:textSize="24dp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
 
     <Button
-        android:text="Search by MICR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnMicr"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:layout_marginTop="12dp"/>
-
-    <Button
-        android:text="Search History"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/btnSearchHistory"
-        android:background="@color/colorPrimary"
+        android:layout_width="184dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/andika_new_basic"
+        android:text="Search History"
         android:textColor="@color/white"
-        android:layout_marginTop="12dp"/>
-</LinearLayout>
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnValidateIfsc"
+        android:layout_width="184dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/andika_new_basic"
+        android:text="Search By IFSC "
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.839" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

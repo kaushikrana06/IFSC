@@ -2,50 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_validate_ifsc"
+    android:id="@+id/activity_validate_mirc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
     android:background="@drawable/untitled2"
-    android:padding="16dp"
-    tools:context="com.kaushikrana.ifcs.ValidateIfscActivity">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.kaushikrana.ifcs.ValidateMircActivity">
 
     <TextView
         android:id="@+id/font"
-        android:layout_width="match_parent"
-        android:layout_height="89dp"
-        android:layout_marginTop="22dp"
+        android:layout_width="384dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/halant_medium"
         android:gravity="center"
-        android:text="- SEARCH IFSC -"
-        android:textColor="#cb6c"
+        android:text="- VALIDATE MICR -"
+        android:textColor="#cb6ce6"
         android:textStyle="bold"
-        android:textSize="45dp" />
+        android:textSize="42dp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="135dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="20dp"
+        android:background="#F3F7F8"
         android:backgroundTint="#F3F7F8"
-        android:padding="16dp"
-        app:cardCornerRadius="20dp">
+        android:padding="16dp">
 
         <EditText
-            android:id="@+id/etIFSC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/et_design"
-            android:ems="10"
-            android:hint="Enter IFSC"
             android:inputType="textPersonName"
-            android:paddingLeft="15dp"
+            android:ems="10"
+            android:background="@drawable/et_design"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:paddingTop="10dp"
-            android:textColor="@color/black"
             android:paddingBottom="10dp"
-            android:textColorHint="@color/grey" />
+            android:paddingLeft="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:id="@+id/etIFSC"
+            android:hint="Enter MICR" />
 
         <Button
             android:id="@+id/btnValidate"
@@ -54,20 +59,18 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="70dp"
             android:layout_marginRight="18dp"
-            android:background="@drawable/button1"
+            android:background="@drawable/button"
             android:fontFamily="@font/archivo_narrow"
-            android:text="Search"
+            android:text="Validate"
             android:textColor="@color/white"
+            android:textStyle="bold"
             android:textSize="18sp" />
 
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="379dp"
-        android:layout_height="312dp"
-        android:background="#F3F7F8"
-        android:backgroundTint="#F3F7F8"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:layout_width="378dp"
+        android:layout_height="340dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,6 +123,7 @@
                 android:layout_marginBottom="5dp"
                 android:background="#F3F7F8"
                 android:backgroundTint="#F3F7F8"
+
                 android:padding="16dp"
                 android:visibility="gone"
                 app:cardCornerRadius="20dp">
@@ -151,10 +155,10 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+
                             android:layout_marginTop="4dp"
                             android:text="State"
                             android:textColor="#5271ff"
-
                             android:textSize="17sp"
                             android:textStyle="bold" />
 
@@ -165,7 +169,6 @@
                             android:layout_marginBottom="5dp"
                             android:text="District"
                             android:textColor="#5271ff"
-
 
                             android:textSize="17sp"
                             android:textStyle="bold" />
@@ -208,6 +211,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:textColor="#cd89fd"
+
                             android:textSize="17sp" />
 
                         <TextView
@@ -258,23 +262,21 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-
     </ScrollView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="101dp"
         android:layout_height="128dp"
         android:layout_gravity="center">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button2"
             android:layout_width="70dp"
             android:layout_height="68dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/share"
             android:visibility="invisible"
-            android:layout_marginTop="10dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.483"
